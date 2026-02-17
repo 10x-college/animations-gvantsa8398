@@ -32,7 +32,7 @@ body {
 }
 
 
-/*nav bar styles here*/
+/*header styles here*/
 
 .navbar {
     display: flex;
@@ -153,8 +153,6 @@ body {
     width: 7rem;
     height: 12.3rem;
     position: relative;
-    bottom: 0;
-    right: 0;
 }
 
 .box-left::after {
@@ -180,8 +178,6 @@ body {
     width: 7rem;
     height: 12.3rem;
     position: relative;
-    bottom: 0;
-    right: 0;
 }
 
 .box-right::before {
@@ -202,6 +198,10 @@ body {
     border-bottom: 0.1rem dashed #404040;
 }
 
+
+
+/*content styles here*/
+
 .container {
     display: grid;
     grid-template-columns: repeat(1, 149.6rem);
@@ -214,19 +214,17 @@ body {
 /* banner styles here*/
 
 .banner {
-    width: 149.6rem;
     height: 106.6rem;
     border: 0.2rem dashed var(--background-color-darker);
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    top: 5rem;
+    margin-top: 5rem;
 
     img {
         width: 149.6rem;
-        border-radius: 2rem;
+        border-radius: 2rem 2rem 0rem 0rem;
     }
 }
 
@@ -234,6 +232,7 @@ body {
 
 .banner a:hover {
     background-color: #1a1a1a;
+    border-radius: 1.2rem;
 }
 
 .stats {
@@ -243,30 +242,31 @@ body {
     width: 100%;
     height: 46.8rem;
     position: relative;
-    top: -5.6rem;
 }
 
-.stats a {
-    text-decoration: none;
-    padding: 1.8rem 2.4rem;
+.shop-btn {
+    
     border: 0.1rem dashed #404040;
     border-radius: 1.2rem;
     background-color: #1F1F1F;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+.shop-btn a {
+    text-decoration: none;
     color: var(--absolute-white);
     font-size: 1.8rem;
     font-family: var(--font-display);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
+    padding: 1.8rem 2.4rem;
 
     img {
         width: 3rem;
-        margin-bottom: 0.6rem;
         padding: 0.3rem;
-        object-fit: cover;
     }
 }
 
@@ -274,7 +274,7 @@ body {
     grid-column: span 2;
     grid-row: span 2;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     padding: 10rem 8rem 8rem 8rem;
     gap: 3rem;
@@ -286,9 +286,9 @@ body {
     }
     li {
         a {
-            position: relative;
-            top: 0;
-            transform: translateY(0%);
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
             padding: 1.4rem 2.4rem;
             border: 0.1rem dashed #333333;
             border-radius: 1.2rem;
@@ -314,8 +314,9 @@ body {
 
 .banner article {
     font-family: var(--font-display);
-    padding: 12rem 5rem 5rem 5rem;
+    padding: 9rem 5rem 5rem 5rem;
     border-left: 0.2rem dashed var(--background-color-darker);
+    border-top: 0.2rem dashed var(--background-color-darker);
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -329,5 +330,282 @@ body {
     p {
         font-size: 1.8rem;
         color: #81807E;
+    }
+}
+
+.banner article:nth-child(-n+4) {
+  border-top: none;
+}
+
+
+/*informational section styles here*/
+
+.info {
+    height: 106.7rem;
+    border: 0.2rem dashed var(--background-color-darker);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info span {
+    width: 100%;
+    height: 27.3rem;
+    padding: 8rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    h2 {
+        font-family: var(--font-display);
+        font-size: 4.8rem;
+        font-weight: 500;
+        color: var(--absolute-white);
+    }
+
+    p {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        color: #676665;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 79.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 2rem;
+    padding: 4.5rem;
+    border-top: 0.2rem dashed var(--background-color-darker);
+    border-right: 0.2rem dashed var(--background-color-darker);
+    
+
+    div {
+        position: absolute;
+        right: 0rem;
+        top: 0rem;
+    }
+    
+    span {
+        width: 9.4rem;
+        height: 9.4rem;
+        padding: 0;
+    }
+
+    h3 {
+        font-family: var(--font-display);
+        font-size: 2.4rem;
+        color: var(--absolute-white);
+        margin-top: 3rem;
+    }
+
+    p {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        color: #81807E;
+    }
+}
+
+.blog:nth-child(3n) {
+  border-right: none;
+}
+
+/*productes section styles here*/
+
+.products {
+    height: 166.4rem;
+    border: 0.2rem dashed var(--background-color-darker);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intr {
+    width: 100%;
+    height: 38.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 8rem 21.5rem 8rem 8rem;
+    position: relative;
+    overflow: hidden;
+
+    img{
+        position: absolute;
+        width: 42.54rem;
+        height: 44.6rem;
+        right: 0rem;
+        top: 0rem;
+        transform: translate(50%, -10%);
+        
+    }
+
+    h2 {
+        font-family: var(--font-display);
+        font-size: 4.8rem;
+        font-weight: 500;
+        color: var(--absolute-white);
+    }
+
+    p {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        color: #676665;
+        margin-bottom: 3rem;
+    }
+
+    ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style-type: none;
+    }
+    li {
+        a {
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            padding: 1.4rem 2.4rem;
+            border: 0.1rem dashed #333333;
+            border-radius: 1.2rem;
+            background:none;
+            color: var(--font-color-grey-beige);
+        }
+
+        a:hover {
+            border: none;
+            background-color: #C2B4A3;
+            color: var(--color-dark);
+        }
+    }
+
+    h2 {
+        font-size: 4.8rem;
+        font-family: var(--font-display);
+        color: var(--absolute-white);
+        font-weight: 500;
+    }
+
+    p {
+        color: #676665;
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+}
+
+.products-cards {
+    width: 100%;
+    height: 127.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
+
+    figcaption {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.type {
+    width: 14.6rem;
+    height: 4.7rem;
+    font-size: 1.8rem;
+    font-family: var(--font-display);
+    color:var(--font-color-grey-beige);
+    background-color: #1A1A1A;
+    border: 0.1rem dashed var(--background-color-darker);
+    border-radius: 10rem;
+    padding: 1rem 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.type:hover {
+    background-color: var(--background-color-beige);
+    color: var(--absolute-black);
+    border: none;
+}
+
+.head a {
+    border: 0.1rem dashed #404040;
+    border-radius: 1.2rem;
+    background-color: #1F1F1F;
+    text-decoration: none;
+    color: var(--absolute-white);
+    font-size: 1.8rem;
+    font-family: var(--font-display);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.8rem 2.4rem;
+}
+
+.head a::after {
+    content: url(./assets/arrow.png);
+}
+
+.head a:hover {
+    background-color: #1a1a1a;
+    border-radius: 1.2rem;
+}
+
+.products-cards article {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-family: var(--font-tech);
+    border-top: 0.2rem dashed var(--background-color-darker);
+    border-right: 0.2rem dashed var(--background-color-darker);
+    padding-top: 3rem;
+    
+    h4 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: var(--absolute-white)
+    }
+}
+
+.products-cards article:nth-child(3n) {
+    border-right: none;
+}
+    
+
+.details {
+    font-size: 2rem;
+    color: #CCCCCC;
+    display: flex;
+    gap: 2.5rem;
+    
+
+    .highlight {
+        font-size: 1.8rem;
+        color: #81807E;
+        position: relative;
+    }
+
+    .highlight::after{
+        content: url(./assets/dot.png);
+        position: absolute;
+        top: -15%;
+        right: -28%;
     }
 }
